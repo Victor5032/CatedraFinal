@@ -61,7 +61,7 @@
                             <tbody>
                                 <% if (resultado.getRow() < 1) { %>
                                     <tr>
-                                        <th scope="row" colspan="6">1</th>
+                                        <th scope="row" colspan="6">Sin departamentos</th>
                                     </tr>
                                 <% 
                                     } else {

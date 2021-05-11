@@ -49,8 +49,12 @@
                             mensaje = resultado.getString(4) + " " + resultado.getString(5);
                             route = "../admin/index.jsp";
                             break;
-                    }
 
+                        case 2:
+                            mensaje = resultado.getString(4) + " " + resultado.getString(5);
+                            route = "../jefe/Index.jsp";
+                            break;
+                    }
                     
                 } else {
                     mensaje = "El usuario no se encuentra registrado";

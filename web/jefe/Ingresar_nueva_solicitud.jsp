@@ -13,24 +13,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
         <!-- JavaScript Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
         <title>Nueva solicitud</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark  bg-dark ">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Universidad Don Bosco</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="Index.jsp">Inicio</a>
-                        <a class="nav-link" href="#">Ingresar nueva solicitud</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <jsp:include page="../components/navbar_funcional.jsp"></jsp:include>
         <div class="container">
             <div class="row">
                 <div class="jumbotron">
@@ -55,16 +41,16 @@
                             <label class="form-label">Seleccione un departamento</label>
                             <select class="form-select" name="departamento_id" >
                                 <% 
-                                ConexionBase con = new ConexionBase();
-                                ResultSet rs = null;
-                                
-                                con.setRs("SELECT * FROM departamento");
-                                rs = con.getRs();
-                                while(rs.next()){
-                                    %>
-                                    <option value="<%= rs.getInt(1)%>"><%= rs.getString(3) %></option>
-                                    <%
-                                }
+                                    ConexionBase con = new ConexionBase();
+                                    ResultSet rs = null;
+                                    
+                                    con.setRs("SELECT * FROM departamento WHERE jefe = " + session.getAttribute("id"));
+                                    rs = con.getRs();
+                                    while(rs.next()){
+                                %>
+                                        <option value="<%= rs.getInt(1)%>"><%= rs.getString(3) %></option>
+                                <%
+                                    }
                                 %>     
                                 
                             </select>
@@ -100,5 +86,6 @@
                 </div>
             </form>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     </body>
 </html>

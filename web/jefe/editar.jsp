@@ -36,20 +36,7 @@
         <title>Actualizar</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark  bg-dark ">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Universidad Don Bosco</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="Index.jsp">Inicio</a>
-                        <a class="nav-link" href="Ingresar_nueva_solicitud.jsp">Ingresar nueva solicitud</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <jsp:include page="../components/navbar_funcional.jsp"></jsp:include>
         <div class="container">
             <div class="row">
                 <div class="jumbotron">
@@ -82,7 +69,7 @@
                                     <%                                        ConexionBase con = new ConexionBase();
                                         ResultSet rs = null;
 
-                                        con.setRs("SELECT * FROM departamento");
+                                        con.setRs("SELECT * FROM departamento WHERE jefe = " + session.getAttribute("id"));
                                         rs = con.getRs();
                                         while (rs.next()) {
                                     %>
