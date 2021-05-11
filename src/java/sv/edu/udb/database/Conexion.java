@@ -16,7 +16,7 @@ public class Conexion {
     private Connection conexion = null;
     private Statement s = null;
     private ResultSet rs = null;
-    private String query = "";
+    // private String query = "";
     
     public Conexion() throws SQLException {
         try {
