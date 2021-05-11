@@ -34,7 +34,7 @@
                 </li>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Jefes de Desarrollo</a>
+                    <a class="nav-link <% if (url.equals("http://localhost:8080/CatedraFinal/admin/jefes_desarrollo.jsp")) { %> active <% } %>" href="${pageContext.request.contextPath}/admin/jefes_desarrollo.jsp">Jefes de Desarrollo</a>
             </ul>
             <div class="d-flex">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
