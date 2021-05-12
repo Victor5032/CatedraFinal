@@ -3,9 +3,15 @@
     Created on : 13/04/2021, 09:10:07 PM
     Author     : Edwin Orellana
 --%>
-<jsp:useBean id="Ingresar" scope="page" class="sv.edu.udb.db.jefe.Ingresar"/>
-<jsp:setProperty name="Ingresar" property="*"/>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+
+<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+
+<%-- <jsp:useBean id="Ingresar" class="sv.edu.udb.db.jefe.Ingresar" /> --%>
+<jsp:useBean id="Ingresar" class="sv.edu.udb.db.jefe.Ingresar" />
+
+<jsp:setProperty name="Ingresar" property="*" />
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -36,7 +42,7 @@
             </div>
             <div class="row" >
                 <div class="alert alert-success" role="alert">
-                   <p><jsp:getProperty name="Ingresar" property="ingresarDatos"/></p>
+                   <p><jsp:getProperty name="Ingresar" property="IngresarDatos"/></p>
                 </div>
             </div>
         </div>

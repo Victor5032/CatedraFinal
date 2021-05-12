@@ -73,7 +73,7 @@
                                         rs = con.getRs();
                                         while (rs.next()) {
                                     %>
-                                    <option value="<%= rs.getInt(1)%>"><%= rs.getString(3)%></option>
+                                        <option value="<%= rs.getInt(1)%>" <% if (rs.getInt(1) == rs3.getInt(2)) { out.println("selected"); } %> ><%= rs.getString(3)%></option>
                                     <%
                                         }
                                     %>     
