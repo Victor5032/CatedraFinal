@@ -7,7 +7,6 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8" %>
 
 <%@ page import="java.sql.*" %>
-<%@ page import="jakarta.servlet.http.HttpSession" %>
 <%@ page import="sv.edu.udb.database.Conexion" %>
 
 <!DOCTYPE html>
@@ -22,7 +21,7 @@
             String password = request.getParameter("password");
 
             String mensaje = "", route = "";
-            
+            // out.println(usuario);
            if (usuario.equals("") || password.equals("")) {
                 mensaje = "Credenciales invalidas";
                 route = "../index.jsp";
@@ -30,7 +29,7 @@
                 Conexion conex = new Conexion();
 
                 String sql = "SELECT usuario, contraseña, tipo_usuario, nombres, apellidos, usuario_id FROM usuarios WHERE usuario = '" + usuario + "' AND contraseña = '" + password + "' AND estado = 1";
-
+                // out.println(sql);
                 conex.setRs(sql);
 
                 ResultSet resultado = conex.getRs();
@@ -44,15 +43,27 @@
                     session.setAttribute("apellidos", resultado.getString(5));
                     session.setAttribute("tipo", resultado.getInt(3));
 
+                    mensaje = resultado.getString(4) + " " + resultado.getString(5);
+                    // out.println(resultado.getInt(3));
                     switch (resultado.getInt(3)) {
                         case 1:
-                            mensaje = resultado.getString(4) + " " + resultado.getString(5);
                             route = "../admin/index.jsp";
                             break;
 
                         case 2:
-                            mensaje = resultado.getString(4) + " " + resultado.getString(5);
                             route = "../jefe/Index.jsp";
+                            break;
+
+                        case 3:
+                            route = "../empleado/index.jsp";
+                            break;
+
+                        case 4:
+                            route = "../desarrollo/index.jsp";
+                            break;
+
+                        case 5:
+                            route = "../programador/index.jsp";
                             break;
                     }
                     
