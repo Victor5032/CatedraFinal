@@ -7,7 +7,6 @@
 
 <%@ page contentType="text/html" pageEncoding="UTF-8" %>
 
-<%-- <jsp:useBean id="Ingresar" class="sv.edu.udb.db.jefe.Ingresar" /> --%>
 <jsp:useBean id="Ingresar" class="sv.edu.udb.db.jefe.Ingresar" />
 
 <jsp:setProperty name="Ingresar" property="*" />
@@ -42,7 +41,7 @@
             </div>
             <div class="row" >
                 <div class="alert alert-success" role="alert">
-                   <p><jsp:getProperty name="Ingresar" property="IngresarDatos"/></p>
+                   <p><jsp:getProperty name="Ingresar" property="ingresarDatos"/></p>
                 </div>
             </div>
         </div>

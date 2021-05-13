@@ -24,7 +24,7 @@
                     <p class="lead">Aqui puede ingresar una nueva solicitud para aperturar casos</p> 
                 </div>
             </div>
-            <form role="form" action="ingreso_exitoso.jsp" method="POST">
+            <form role="form" action="${pageContext.request.contextPath}/jefe/ingreso_exitoso.jsp" method="POST">
                 <div class="row">
                     <div class="col-sm">
                         <div class="mb-3" >
