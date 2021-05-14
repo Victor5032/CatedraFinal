@@ -25,8 +25,8 @@
                         <th>Caso</th>
                         <th>Descripción</th>
                         <th>Fecha de entrega</th>
-                        <th></th>
-                        <th></th>
+                        <th>m</th>
+                        <th>n</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,7 +49,7 @@
                         <th> <%=rs1.getString(5)%></th>
                         <th> <%=rs1.getString(6)%></th>
                         <th> <%=rs1.getString(7)%></th>
-                        <th><input > </th>
+                        <th><input type="submit" name="bitacora" href="InfoCasos.jsp?" size="45"> </th>
                     </tr>
                     <%
                     }
@@ -57,9 +57,8 @@
                 </tbody>
             </table>
                 <div>
-                    <table>
-                        
-                    </table>
+                    <h1>Bitacora</h1>
+                    <input type="text" name="bitacora" value="" size="45">
                 </div>
         </div>
     </body>
