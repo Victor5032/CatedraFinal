@@ -62,7 +62,7 @@
                         </tr>
                         <tr> 
                             <th>Descripcion:</th>
-                            <th><input type="text" name="descripcion" size="40"></th>
+                            <th><input type="text" name="descripcion" id="descripcion" size="40"></th>
                         </tr>
                         <tr>
                             <th>Notas:</th>
