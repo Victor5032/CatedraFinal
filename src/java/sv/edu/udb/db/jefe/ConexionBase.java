@@ -7,7 +7,7 @@ public class ConexionBase {
     private Connection conexion = null;
     private Statement s = null;
     private ResultSet rs = null;
-    private String query = "";
+    // private String query = "";
 
     public ConexionBase() throws SQLException {
         try {

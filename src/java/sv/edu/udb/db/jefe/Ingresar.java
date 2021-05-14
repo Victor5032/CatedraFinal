@@ -1,14 +1,15 @@
 package sv.edu.udb.db.jefe;
 
+/**
+ *
+ * @author Edwin Orellana
+ */
+
 import java.sql.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- *
- * @author Edwin Orellana
- */
 public class Ingresar {
 
     private String titulo_solicitud = "";
@@ -190,7 +191,7 @@ public class Ingresar {
         return informacion;
     }
     
-    public String getDeleted() throws  SQLException {
+    public String getDeleted() throws SQLException {
         int id = getId_solicitud();
         String QueryDelete = "DELETE FROM solicitud WHERE solicitud_id = "+id+"";
         ConexionBase conDelete = new ConexionBase();
@@ -200,4 +201,7 @@ public class Ingresar {
         return "Su solicitud se ha eliminado exitosamente !.";
     }
 
+    public String getTest() {
+        return "Retorno del get";
+    }
 }
